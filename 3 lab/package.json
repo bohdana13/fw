@@ -1,10 +1,10 @@
 {
-  "name": "lab-app",
+  "name": "3lab",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start": "webpack serve --open"
   },
   "repository": {
@@ -18,5 +18,8 @@
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
+  },
+  "dependencies": {
+    "undici": "^6.19.8"
   }
 }

@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "outDir": "./dist",
     "sourceMap": true,
-    "moduleResolution": "node" // Додайте це
+    "moduleResolution": "node"
   },
   "include": [
     "src"

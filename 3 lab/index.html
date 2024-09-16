@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/3 lab/libs/bootstrap.css" rel="stylesheet">
+
     <title>Система управління бібліотекою</title>
 </head>
 <body>
-<!--Past your markup here-->
 
-  
-<script src="/3 lab/dist/bundle.js"></script>  <!-- Виведений файл з Webpack -->
+    <button id="addBookButton">Add Book</button>
+<input type="text" id="bookTitle" placeholder="Title">
+<input type="text" id="bookAuthor" placeholder="Author">
+<input type="text" id="bookYear" placeholder="Year">
+
+<button id="addUserButton">Add User</button>
+<input type="text" id="userName" placeholder="Name">
+<input type="text" id="userEmail" placeholder="Email">
+
+<button id="borrowBookButton">Borrow Book</button>
+<input type="text" id="userId" placeholder="User ID">
+<input type="text" id="bookId" placeholder="Book ID">
+
+<button id="returnBookButton">Return Book</button>
+
+<button id="clearStorageButton">Clear Storage</button>
+<h2>Books</h2>
+<ul id="bookList"></ul>
+
+<h2>Users</h2>
+<ul id="userList"></ul>
+
+      
+<script src="/3 lab/dist/bundle.js"></script>  
 
 </body>
 </html>

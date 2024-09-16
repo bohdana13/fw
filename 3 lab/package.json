@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --mode production",
+    "watch": "tsc --watch",
     "start": "webpack serve --open"
   },
   "repository": {

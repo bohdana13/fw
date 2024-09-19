@@ -5,6 +5,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
                 test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
@@ -15,15 +19,14 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     output: {
-        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
     mode: 'development',
     devServer: {
         static: {
             directory: path.join(__dirname, '/'),
         },
-        open: true,
         compress: true,
         port: 9000,
     },

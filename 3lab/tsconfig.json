@@ -6,11 +6,10 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "sourceMap": true,
-    "moduleResolution": "node"
+    "sourceMap": true
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"

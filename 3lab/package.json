@@ -6,7 +6,10 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "tsc --watch",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "format": "prettier --write 'src/**/*.{js,ts}'",
+    "lint:fix": "eslint 'src/**/*.{js,ts}' --fix"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,8 @@
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",

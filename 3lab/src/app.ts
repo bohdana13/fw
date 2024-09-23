@@ -46,7 +46,7 @@ class App {
   }
 
   private setupUserForm() {
-    let userCreationForm = <HTMLFormElement>(
+    const userCreationForm = <HTMLFormElement>(
       document.getElementById("create-user-form")
     );
     if (!userCreationForm) return;

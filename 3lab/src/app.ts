@@ -1,5 +1,4 @@
-import { Book } from "./models/book";
-import { User } from "./models/user";
+
 import { UserService } from "./services/user-service";
 import { LibraryService } from "./services/libraryService";
 import { Pagination } from "./utils/pagination";
@@ -47,7 +46,7 @@ class App {
   }
 
   private setupUserForm() {
-    const userCreationForm = <HTMLFormElement>(
+    let userCreationForm = <HTMLFormElement>(
       document.getElementById("create-user-form")
     );
     if (!userCreationForm) return;

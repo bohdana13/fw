@@ -3,7 +3,8 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
     <UserCard :userData="userData" />
-    <UserList :userData="userData" />
+    <UserCard :userData="userData2" />
+    <UserList/>
 
   </div>
 </template>
@@ -29,6 +30,15 @@ export default class App extends Vue {
     gender: "жінка",
     position: "політична діячка",
     hobbies: ["зумерські едіти", "читання", "політика"],
+    photo: require("./assets/userData.jpg"),
+  };
+  userData2 = {
+    firstName: "Камала",
+    lastName: "Харріс",
+    age: 13,
+    gender: "жінка",
+    position: "учениця",
+    hobbies: [],
     photo: require("./assets/userData.jpg"),
   };
 }

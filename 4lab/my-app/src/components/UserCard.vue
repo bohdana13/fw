@@ -1,6 +1,6 @@
 <template>
   <div class="user-card" :class="{ 'under-age': userData.age <= 18 }">
-    <img :src="userData.photo" alt="User Photo">
+    <img :src="userData.photo" alt="User Photo" />
     <h2>{{ userData.firstName }} {{ userData.lastName }}</h2>
     <p v-if="userData.age > 18">Вік: {{ userData.age }}</p>
     <p>Стать: {{ userData.gender }}</p>
@@ -19,9 +19,9 @@ export default {
   props: {
     userData: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -46,50 +46,14 @@ export default {
   font-size: 20px;
 }
 .user-card p {
-  margin: 2px 0; 
+  margin: 2px 0;
 }
 
 .user-card.under-age {
-  background-color: lightcoral; 
+  background-color: lightcoral;
 }
 
 .user-card:not(.under-age) {
-  background-color: lightgreen; 
+  background-color: lightgreen;
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//import { defineComponent, computed } from 'vue';
-
-// export default defineComponent({
-//   name: "UserCard",
-//   props: {
-//     userData: {
-//       type: Object,
-//       required: true,
-//     },
-//   },
-//   setup(props) {
-//     const ageClass = computed(() => {
-//       return props.userData.age > 18 ? "older" : "younger";
-//     });
-
-//     return { ageClass };
-//   },
-// });

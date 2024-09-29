@@ -13,16 +13,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "UserCard",
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { User } from '../models/user'; 
+
+export default defineComponent({
+  name: 'UserCard',
   props: {
     userData: {
-      type: Object,
+      type: Object as () => User, 
       required: true,
     },
   },
-};
+});
 </script>
 
 <style>

@@ -2,9 +2,8 @@
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <UserCard :userData="userData" />
-    <UserCard :userData="userData2" />
-    <UserList/>
+        <UserCard v-for="(user, index) in users" :key="index" :userData="user" />
+     <UserList/>
 
   </div>
 </template>
@@ -14,6 +13,7 @@ import { Options, Vue } from "vue-class-component";
 import HelloWorld from "./components/HelloWorld.vue";
 import UserCard from "./components/UserCard.vue";
 import UserList from "./components/UserList.vue";
+import { User } from "./models/user";
 
 @Options({
   components: {
@@ -23,24 +23,28 @@ import UserList from "./components/UserList.vue";
   },
 })
 export default class App extends Vue {
-  userData = {
-    firstName: "Камала",
-    lastName: "Харріс",
-    age: 59,
-    gender: "жінка",
-    position: "політична діячка",
-    hobbies: ["зумерські едіти", "читання", "політика"],
-    photo: require("./assets/userData.jpg"),
-  };
-  userData2 = {
-    firstName: "Камала",
-    lastName: "Харріс",
-    age: 13,
-    gender: "жінка",
-    position: "учениця",
-    hobbies: [],
-    photo: require("./assets/userData.jpg"),
-  };
+   users: User[] = [
+    new User(
+      1,
+      "Камала",
+      "Харріс",
+      59,
+      "жінка",
+      "політична діячка",
+      ["зумерські едіти", "читання", "політика"],
+      require("./assets/userData.jpg")
+    ),
+    new User(
+      2,
+      "Камала",
+      "Харріс",
+      13,
+      "жінка",
+      "учениця",
+      [],
+      require("./assets/userData.jpg")
+    ),
+  ];
 }
 </script>
 

@@ -6,35 +6,37 @@
       <button @click="resetFilter">Показати всіх</button>
     </div>
 
-    <div v-if="filteredUsers.length > 0">
+    <div v-if="filteredUsers.length">
       <UserCard v-for="user in filteredUsers" :key="user.id" :userData="user" />
     </div>
     <p v-else>Список юзерів пустий</p>
   </div>
 </template>
 
-<script lang="ts" >
+<script lang="ts">
 import { defineComponent, ref, computed } from "vue";
 import UserCard from "./UserCard.vue";
+import { User } from "../models/user";
 
 export default defineComponent({
   name: "UserList",
+
   components: {
     UserCard,
   },
 
   setup() {
-    const users = ref([
-      // {
-      //   id: 1,
-      //   firstName: "Джон",
-      //   lastName: "Уільямс",
-      //   gender: "чоловік",
-      //   age: 15,
-      //   position: "веб-розробник",
-      //   photo: "https://randomuser.me/api/portraits/men/1.jpg",
-      //   hobbies: [],
-      // },
+    const users = ref<User[]>([
+      {
+        id: 1,
+        firstName: "Джон",
+        lastName: "Уільямс",
+        gender: "чоловік",
+        age: 15,
+        position: "веб-розробник",
+        photo: "https://randomuser.me/api/portraits/men/1.jpg",
+        hobbies: [],
+      },
       {
         id: 2,
         firstName: "Кейт",
@@ -115,17 +117,17 @@ export default defineComponent({
         photo: "https://randomuser.me/api/portraits/women/17.jpg",
         hobbies: ["написання музики"],
       },
-      // {
-      //   id: 10,
-      //   firstName: "Алекс",
-      //   lastName: "Мейт",
-      //   gender: "чоловік",
-      //   age: 38,
-      //   position: "дизайнер",
-      //   photo: "https://randomuser.me/api/portraits/men/60.jpg",
-      //   hobbies: [],
-      // },
-]);
+      {
+        id: 10,
+        firstName: "Алекс",
+        lastName: "Мейт",
+        gender: "чоловік",
+        age: 38,
+        position: "дизайнер",
+        photo: "https://randomuser.me/api/portraits/men/60.jpg",
+        hobbies: [],
+      },
+    ]);
 
     const genderFilter = ref<string | null>(null);
 
@@ -162,7 +164,6 @@ button {
   margin-right: 10px;
   cursor: pointer;
   background-color: #ddd;
-
 }
 
 button:hover {
